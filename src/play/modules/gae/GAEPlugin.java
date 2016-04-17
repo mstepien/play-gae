@@ -39,6 +39,7 @@ public class GAEPlugin extends PlayPlugin {
             // Force to PROD mode when hosted on production GAE
             Play.mode = Play.Mode.PROD;
             prodGAE = true;
+            wrapGAECache();
         }
     }
 
@@ -55,14 +56,17 @@ public class GAEPlugin extends PlayPlugin {
 
     @Override
     public void onApplicationStart() {
-        // Wrap the GAE cache
-        if (devEnvironment == null) {
-            Cache.forcedCacheImpl = new GAECache(); 
-        }
-
+        wrapGAECache();
         // Provide the correct JavaMail session
         Mail.session = Session.getDefaultInstance(new Properties(), null);
         Mail.asynchronousSend = false;
+    }
+    
+    private void wrapGAECache() {
+        // Wrap the GAE cache
+        if (devEnvironment == null && Cache.forcedCacheImpl == null) {
+            Cache.forcedCacheImpl = new GAECache(); 
+        }
     }
     
     @Override
