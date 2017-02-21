@@ -90,7 +90,7 @@ public class PlayDevEnvironment implements Environment, LocalServerEnvironment {
 
     @Override
     public File getAppDir() {
-        return new File(Play.applicationPath, "war" + File.pathSeparator + getModuleId());
+        return new File(Play.applicationPath, "war" + File.separator + getModuleId());
     }
 
     @Override
