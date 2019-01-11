@@ -22,7 +22,7 @@ public class GAEPlugin extends PlayPlugin {
     public void onLoad() {
         // Remove Jobs from plugin list iff NOT running tests
         // Jobs plugin is necessary to dispatch test executions
-        if (! Play.runingInTestMode()) {
+        if (! Play.runningInTestMode()) {
             Play.pluginCollection.disablePlugin(play.jobs.JobsPlugin.class);
         }
     	
