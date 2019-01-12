@@ -13,9 +13,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.jsp.ah.adminConsole_jsp;
-import org.apache.jsp.ah.backendsBody_jsp;
-import org.apache.jsp.ah.backendsFinal_jsp;
-import org.apache.jsp.ah.backendsHead_jsp;
 import org.apache.jsp.ah.capabilitiesStatusBody_jsp;
 import org.apache.jsp.ah.capabilitiesStatusFinal_jsp;
 import org.apache.jsp.ah.capabilitiesStatusHead_jsp;
@@ -42,9 +39,7 @@ import com.google.apphosting.utils.servlet.AdminConsoleResourceServlet;
 import com.google.apphosting.utils.servlet.CapabilitiesStatusServlet;
 import com.google.apphosting.utils.servlet.DatastoreViewerServlet;
 import com.google.apphosting.utils.servlet.InboundMailServlet;
-import com.google.apphosting.utils.servlet.ServersServlet;
 import com.google.apphosting.utils.servlet.TaskQueueViewerServlet;
-import com.google.apphosting.utils.servlet.XmppServlet;
 
 public class GAEAdminConsoleServer {
 
@@ -89,7 +84,6 @@ public class GAEAdminConsoleServer {
         webappcontext.addServlet(taskqueueViewerBody_jsp.class, "/_ah/taskqueueViewerBody");
         webappcontext.addServlet(taskqueueViewerFinal_jsp.class, "/_ah/taskqueueViewerFinal");
         
-        webappcontext.addServlet(XmppServlet.class, "/_ah/admin/xmpp");
         webappcontext.addServlet(taskqueueViewerHead_jsp.class, "/_ah/xmppHead");
         webappcontext.addServlet(taskqueueViewerBody_jsp.class, "/_ah/xmppBody");
         webappcontext.addServlet(taskqueueViewerFinal_jsp.class, "/_ah/xmppFinal");
@@ -98,11 +92,6 @@ public class GAEAdminConsoleServer {
         webappcontext.addServlet(inboundMailHead_jsp.class, "/_ah/inboundmailHead");
         webappcontext.addServlet(inboundMailBody_jsp.class, "/_ah/inboundmailBody");
         webappcontext.addServlet(inboundMailFinal_jsp.class, "/_ah/inboundmailFinal");
-        
-        webappcontext.addServlet(ServersServlet.class, "/_ah/admin/backends");
-        webappcontext.addServlet(backendsHead_jsp.class, "/_ah/backendsHead");
-        webappcontext.addServlet(backendsBody_jsp.class, "/_ah/backendsBody");
-        webappcontext.addServlet(backendsFinal_jsp.class, "/_ah/backendsFinal");
         
         webappcontext.addServlet(CapabilitiesStatusServlet.class, "/_ah/admin/capabilitiesstatus");
         webappcontext.addServlet(capabilitiesStatusHead_jsp.class, "/_ah/capabilitiesstatusHead");
