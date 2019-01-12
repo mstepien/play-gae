@@ -1,6 +1,13 @@
 h1. Google App Engine support
 
-bq. *NEW v1.6.1.1: GoogleAppEngine SDK 1.6.1.1 support*
+bq. v1.9.71: GoogleAppEngine SDK 1.9.71 support*
+
+* Works with Play version 1.5.1 and above
+* Removed deprecated GAE APIs:
+** XMPP API
+** Backend
+
+bq. v1.6.1.1: GoogleAppEngine SDK 1.6.1.1 support*
 
 The GAE module enables Google App Engine support for your application. It wraps commons GAE services in play basic services whenever possible (Logging, Mail, Cache...) and expose directly other Google specifics services (User services, Datastore...)
 
